@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privates Profil • Hannah (26)</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    body { background: #121216; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 15px; color: #f3f4f6; }
+    .card { background: #1c1c24; width: 100%; max-width: 400px; border-radius: 22px; box-shadow: 0 15px 35px rgba(0,0,0,0.45); overflow: hidden; border: 1px solid #2e2e3a; }
+    .top-badge { background: linear-gradient(90deg, #e11d48, #be123c); color: #fff; padding: 10px 15px; font-size: 12px; font-weight: 700; letter-spacing: 0.4px; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .dot { width: 8px; height: 8px; background: #4ade80; border-radius: 50%; display: inline-block; box-shadow: 0 0 8px #4ade80; }
+    .hero { padding: 24px 20px 16px; text-align: center; }
+    .avatar-wrap { position: relative; width: 104px; height: 104px; margin: 0 auto 14px; }
+    .avatar { width: 104px; height: 104px; border-radius: 50%; object-fit: cover; border: 3px solid #e11d48; box-shadow: 0 0 20px rgba(225, 29, 72, 0.35); display: block; }
+    .age-tag { position: absolute; bottom: 0; right: 0; background: #e11d48; color: #fff; font-size: 11px; font-weight: 800; padding: 3px 7px; border-radius: 10px; border: 2px solid #1c1c24; }
+    .hero h1 { font-size: 21px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .hero .status { font-size: 13px; color: #4ade80; font-weight: 500; }
+    .message-box { margin: 8px 20px 18px; background: #262631; padding: 15px 16px; border-radius: 16px; border: 1px solid #353544; text-align: left; }
+    .message-box p { font-size: 14.5px; line-height: 1.5; color: #e5e7eb; }
+    .private-hint { margin-top: 10px; padding-top: 10px; border-top: 1px solid #353544; font-size: 12.5px; color: #fda4af; display: flex; align-items: center; gap: 6px; font-weight: 500; }
+    .action { padding: 0 20px 22px; text-align: center; }
+    .btn { display: block; width: 100%; background: linear-gradient(90deg, #f43f5e, #e11d48); color: #fff; text-decoration: none; font-size: 16.5px; font-weight: 700; padding: 16px; border-radius: 14px; box-shadow: 0 8px 20px rgba(225, 29, 72, 0.4); transition: transform 0.15s ease; }
+    .btn:active { transform: scale(0.98); }
+    .sub-note { font-size: 12px; color: #9ca3af; margin-top: 12px; line-height: 1.4; }
+    .footer { margin-top: 16px; text-align: center; font-size: 11px; color: #6b7280; max-width: 380px; line-height: 1.4; }
+    .footer a { color: #6b7280; text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="top-badge">
+      <span class="dot"></span> Privater Chat • Nur ab 18 Jahren
+    </div>
+
+    <div class="hero">
+      <div class="avatar-wrap">
+        <img src="./avatar.jpg" alt="Hannah" class="avatar">
+        <span class="age-tag">18+</span>
+      </div>
+      <h1>Hannah, 26</h1>
+      <div class="status">● Gerade online • 2 km entfernt</div>
+    </div>
+
+    <div class="message-box">
+      <p>
+        „Hey 😊 Ich suche hier keine langen Spielchen, sondern unkomplizierte Kontakte für heute Abend. Meine privaten Fotos sind nur für registrierte Mitglieder freigeschaltet...“
+      </p>
+      <div class="private-hint">
+        🔒 Privates Album & Direkt-Chat warten auf dich
+      </div>
+    </div>
+
+    <div class="action">
+      <a href="https://lovelinkmoment.org" class="btn">18+ Bestätigen &amp; Schreiben →</a>
+      <div class="sub-note">
+        Kostenloser Zugang zur Dating-Plattform.<br>Diskret &amp; nur für Erwachsene (18+).
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    18+ Plattform für Erwachsene. Vermittlung von Online-Kontakten &amp; Dating.<br>
+    <a href="#">Impressum</a> | <a href="#">Datenschutz</a>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const queryParams = window.location.search;
+      if (queryParams) {
+        const btn = document.querySelector('.btn');
+        if (btn) {
+          const url = new URL(btn.href);
+          const incomingParams = new URLSearchParams(queryParams);
+          incomingParams.forEach((value, key) => {
+            url.searchParams.set(key, value);
+          });
+          btn.href = url.toString();
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
